@@ -1,0 +1,40 @@
+problem : https://leetcode.com/problems/maximum-subarray/
+
+In this problem Kadane's Algorithm applies 
+
+
+Approach 1 - Kadane's Algorithm :
+
+    In this we maintain maximum sum possible up to current index
+
+    1: we use to maintain global and local maximum variable
+    2: if all numbers are negative return max element
+    3: update localMax = max(localMax+arr[i],0)
+    4: update globalMax = max(localMax,globalMax)
+    5: here globalMax represents maximum sum till now and localMax represents maximum 
+    sum ending at index[i]
+
+    Time complexity: O(N), Where N is the size of the array.
+    Space complexity: O(1)
+
+
+Approach 2: Brute Force
+
+    In this we will calculate sum of each possible subarray
+
+    1: create two loops iterating over the array
+    2: calculate sum and update globalMax
+
+    Time complexity: O(N^2), Where N is the size of the array.
+    Space complexity: O(1)
+    
+
+Approach 3: DP
+
+    In this we will follow this:
+    1: if we are at an index i we have two choices:
+        a: add current element to previous subarray sum result
+        b: start a new subarray
+
+    2: MS(i) = Max[MS(i-1) + A[i] , A[i]]
+    3: MS is maximum subarray sum till  index i
