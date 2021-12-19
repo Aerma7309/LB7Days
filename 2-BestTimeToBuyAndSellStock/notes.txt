@@ -1,0 +1,19 @@
+problem : https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+
+Approach 1: 
+
+    1: find profit that can be achieved if stock is being sold on i-th day
+    2: update cost price if today's price is less than it
+    3: update max profit if profit is greater than it
+    
+    Time complexity: O(N), Where N is the size of the array.
+    Space complexity: O(1)
+
+
+Approach 2: Brute Force
+    
+    1: buy on each day and try selling it in future days
+    2: keep track of maximum profit earned
+
+    Time complexity: O(N^2), Where N is the size of the array.
+    Space complexity: O(1)
