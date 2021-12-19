@@ -38,3 +38,6 @@ Approach 3: DP
 
     2: MS(i) = Max[MS(i-1) + A[i] , A[i]]
     3: MS is maximum subarray sum till  index i
+
+    Time complexity: O(N), Where N is the size of the array.
+    Space complexity: O(N)
