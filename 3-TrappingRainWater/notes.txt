@@ -1,0 +1,46 @@
+problem : https://leetcode.com/problems/trapping-rain-water/
+
+Approach 1: DP
+
+    1: pre compute leftMax and rightMax arrays
+    2: water trapped is  min(leftMax[i], rightMax[i]) - height[i]
+    3: add up if trapped water is valid i.e greater than 0
+
+    Time complexity: O(n)
+    Space complexity: O(n)
+
+Approach 2: Brute Force
+
+    1: for each index find leftMax and rightMax
+    2: water trapped is  min(leftMax, rightMax) - height
+    3: add up if trapped water is valid i.e greater than 0
+
+    Time complexity: O(n^2)
+    Space complexity: O(1)
+
+
+Approach 3: Using Stack
+
+    the idea here is to calculate water trapped Horizontally instead of Vertical
+
+    1: create a stack to store indices with decreasing height 
+    2: when a height > stack top is found this means bounded height is found
+    3: if stack is empty or of size one no water can be stored 
+        as water will overflow to left
+    4: store stk.top() to top 
+    5: calculate boundedHeight as min(height[currIndex],height[stk.top()]) - height[top]
+    6: boundedWidth is currIndex - stk.top() -1
+    7: water accumulated will be boundedWidth*boundedHeight
+    8: add accumulatedwater to total water
+
+
+Approach 4: Using 2 Pointer Approach
+
+    the idea here is to move pointers only when there exist a greater or equal value 
+    in opposite side , this will gurantee the leftMax and rightMax are calculated properly
+
+    1: start with left and right pointers 
+    2: find the pointer with less height 
+    3: calculate trapped water and if it is > 0 add to total
+
+
